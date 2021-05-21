@@ -1,18 +1,29 @@
 const Employee = require("../lib/Employee");
 
 describe("Employee", () => {
-  it("Start Employee instance", () => {
-    const employed = new Employee();
-    expect(typeof employed).tobe("object");
+  it("Creates new Employee object", () => {
+    const employed = new Employee("name", "52", "test@test.com");
+    expect(employed).toBe({
+      name: "name",
+      id: "52",
+      email: "test@test.com",
+    });
   });
-  it("Set the name of Employee", () => {
-    const name = new ""();
-    const employed = new Employee();
-    expect(employed.name).tobe(name);
+
+  it("should return employee name", () => {
+    const employed = new Employee("name", "52", "test@test.com");
+    expect(employed.getName()).toBe("name");
   });
-  it("Set the id", () => {
-    const testEmail = "123@abc.com";
-    const employed = new Employee("Foo", 1, value);
-    expect(employed.email).tobe(value);
+  it("should return employee Id number", () => {
+    const employed = new Employee("name", "52", "test@test.com");
+    expect(employed.getId()).toBe("52");
+  });
+  it("should return employee email address", () => {
+    const employed = new Employee("name", "52", "test@test.com");
+    expect(employed.getEmail()).toBe("test@test.com");
+  });
+  it("should return employee role", () => {
+    const employed = new Employee("name", "52", "test@test.com");
+    expect(employed.getRole()).toBe("Employee");
   });
 });
