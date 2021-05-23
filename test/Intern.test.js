@@ -1,9 +1,9 @@
 const Intern = require("../lib/Intern");
+const testIntern = new Intern("name", "52", "test@test.com", "myUni");
 
 describe("Intern", () => {
   it("Creates new Intern object", () => {
-    const testIntern = new Intern("name", "52", "test@test.com", "myUni");
-    expect(testIntern).toBe({
+    expect(testIntern).toEqual({
       name: "name",
       id: "52",
       email: "test@test.com",
@@ -11,12 +11,20 @@ describe("Intern", () => {
     });
   });
 
+  it("should return employee name", () => {
+    expect(testIntern.name).toEqual("name");
+  });
+  it("should return employee Id number", () => {
+    expect(testIntern.id).toEqual("52");
+  });
+  it("should return employee email address", () => {
+    expect(testIntern.email).toEqual("test@test.com");
+  });
+
   it("should return Intern school name", () => {
-    const testIntern = new Intern("name", "52", "test@test.com", "myUni");
-    expect(testIntern.getSchool()).toBe("myUni");
+    expect(testIntern.getSchool()).toEqual("myUni");
   });
   it("should return Intern role", () => {
-    const testIntern = new Intern("name", "52", "test@test.com", "myUni");
-    expect(testIntern.getRole()).toBe("Intern");
+    expect(testIntern.getRole()).toEqual("Intern");
   });
 });

@@ -1,9 +1,8 @@
 const Employee = require("../lib/Employee");
-
+const employed = new Employee("name", "52", "test@test.com");
 describe("Employee", () => {
   it("Creates new Employee object", () => {
-    const employed = new Employee("name", "52", "test@test.com");
-    expect(employed).toBe({
+    expect(employed).toEqual({
       name: "name",
       id: "52",
       email: "test@test.com",
@@ -11,19 +10,15 @@ describe("Employee", () => {
   });
 
   it("should return employee name", () => {
-    const employed = new Employee("name", "52", "test@test.com");
-    expect(employed.getName()).toBe("name");
+    expect(employed.name).toEqual("name");
   });
   it("should return employee Id number", () => {
-    const employed = new Employee("name", "52", "test@test.com");
-    expect(employed.getId()).toBe("52");
+    expect(employed.getId()).toEqual("52");
   });
   it("should return employee email address", () => {
-    const employed = new Employee("name", "52", "test@test.com");
-    expect(employed.getEmail()).toBe("test@test.com");
+    expect(employed.getEmail()).toEqual("test@test.com");
   });
   it("should return employee role", () => {
-    const employed = new Employee("name", "52", "test@test.com");
-    expect(employed.getRole()).toBe("Employee");
+    expect(employed.getRole()).toEqual("Employee");
   });
 });

@@ -1,9 +1,9 @@
 const Manager = require("../lib/Manager");
+const testManager = new Manager("name", "52", "test@test.com", "5000");
 
 describe("Manager", () => {
   it("Creates new Manager object", () => {
-    const testManager = new Manager("name", "52", "test@test.com", "5000");
-    expect(testManager).toBe({
+    expect(testManager).toEqual({
       name: "name",
       id: "52",
       email: "test@test.com",
@@ -11,18 +11,19 @@ describe("Manager", () => {
     });
   });
 
+  it("should return employee name", () => {
+    expect(testManager.name).toEqual("name");
+  });
+  it("should return employee Id number", () => {
+    expect(testManager.id).toEqual("52");
+  });
+  it("should return employee email address", () => {
+    expect(testManager.email).toEqual("test@test.com");
+  });
   it("should return Manager office number", () => {
-    const testManager = new Manager("name", "52", "test@test.com", "5000");
-    expect(testManager.getOfficeNumber()).toBe("5000");
+    expect(testManager.getOfficeNumber()).toEqual("5000");
   });
   it("should return Manager role", () => {
-    const testManager = new Manager(
-      "name",
-      "52",
-      "test@test.com",
-      "github",
-      "5000"
-    );
-    expect(testManager.getRole()).toBe("Manager");
+    expect(testManager.getRole()).toEqual("Manager");
   });
 });
