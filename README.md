@@ -32,8 +32,13 @@ node apps required:
 ## Usage
 
 Video:
+https://drive.google.com/file/d/1nmhFeEDLMWEY7jAmXv1vHTPvu_rxW0g4/view?usp=sharing
 
 Type "node ." into the command line from the root folder to initiate application. Follow the on screen prompts to generate HTML file from inputs.
+
+### Screenshot
+
+![](/dist/images/Team-Profile-Generator Screenshot.PNG)
 
 #
 
